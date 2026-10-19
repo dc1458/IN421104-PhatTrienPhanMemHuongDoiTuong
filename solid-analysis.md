@@ -1,5 +1,5 @@
-1. Vi Phạm quy tắc S trong SOLID
-* Ở cấp độ Class (ClubManager): Class này đang đóng quá nhiều vai trò: quản lý danh sách CLB \& thành viên, xử lý ghi log ra file, gửi thông báo (Email, Slack) và kiêm luôn việc xuất báo cáo.
-* Hàm CreateClub: Làm tới 3 việc cùng lúc: Kiểm tra hợp lệ dữ liệu (Validate) -> Lưu thông tin -> Gửi thông báo email.
-* Hàm AddMemberToClub: Vừa xử lý nghiệp vụ kiểm tra số lượng thành viên (tối đa 50) và thêm vào danh sách, vừa gửi Email chào mừng và gửi tin nhắn Slack.
+- Hàm CreateClub dòng 52-63, vi phạm nguyên tắc S trong SOLID, hậu quả : gây code khó bảo trì, sửa lỗi vì viết 1 chức năng trong 1 chức năng khác
+- Hàm AddMemberToClub dòng 72-73, vi phạm tắc nguyên S trong SOLID, hậu quả : gây code khó bảo trì, sửa lỗi viết 1 chức năng trong 1 chức năng khác
+- Hàm AddMemberToClub dòng 82-83, vi phạm nguyên tắc O trong SOLID, hậu quả : nếu muốn thêm các kênh chat Telegram hay Zalo thì phải sửa lại code 
+- Hàm PrintClubReport dòng 108, vi phạm  nguyên tắc O trong SOLID, hậu quả : nếu muốn xuất sang định dạng PDF hay Excel thì phải sửa lại code
 
